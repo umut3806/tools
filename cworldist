@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Check if the correct number of arguments is provided
+if [ "$#" -lt 2 ]; then
+    echo "Usage: $0 wordlist1 wordlist2 [wordlist3 ...]"
+    exit 1
+fi
+
+# Combine all wordlists, sort, and remove duplicates
+combined_list=$(sort -u "$@")
+
+# Print the combined and filtered wordlist
+echo "$combined_list"
+
